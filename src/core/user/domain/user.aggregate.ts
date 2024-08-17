@@ -1,5 +1,6 @@
 import { AggregateRoot } from "@core/shared/domain/aggregate-root";
 import { Uuid } from "@core/shared/domain/value-objects/uuid.vo";
+import UserValidatorFactory from "./user.validator";
 
 export type UserConstructorProps = {
   user_id?: UserId;
@@ -41,24 +42,29 @@ export class User extends AggregateRoot {
 
   static create(props: UserCreateCommand) {
     const user = new User(props);
-    //implementar validaçãoF
+    user.validate(["name", "email", "password"]);
     return user;
   }
 
   changeName(name: string) {
     this.name = name;
+    this.validate(["name"]);
   }
 
   changeEmail(email: string) {
     this.email = email;
+    this.validate(["email"]);
   }
 
   changePassword(password: string) {
-    //implementar criptografia
     this.password = password;
+    this.validate(["password"]);
   }
 
-  // implementar validação e ação de gerar user fake
+  validate(fields?: string[]) {
+    const validator = UserValidatorFactory.create();
+    return validator.validate(this.notification, this, fields);
+  }
 
   get entity_id() {
     return this.user_id;
