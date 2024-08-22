@@ -6,6 +6,16 @@ import {
   Table,
 } from "sequelize-typescript";
 
+export interface UserModelProps {
+  user_id: string;
+  name: string;
+  email: string;
+  password: string;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at: Date | null;
+}
+
 @Table({ tableName: "users", timestamps: false })
 export class UserModel extends Model {
   @PrimaryKey
@@ -24,7 +34,7 @@ export class UserModel extends Model {
   @Column({ allowNull: false, type: DataType.DATE(3) })
   declare created_at: Date;
 
-  @Column({ allowNull: true, type: DataType.DATE(3) })
+  @Column({ allowNull: false, type: DataType.DATE(3) })
   declare updated_at: Date;
 
   @Column({ allowNull: true, type: DataType.DATE(3) })

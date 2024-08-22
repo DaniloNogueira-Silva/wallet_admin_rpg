@@ -22,7 +22,6 @@ export type UserCreateCommand = {
 export class UserId extends Uuid {}
 
 export class User extends AggregateRoot {
-
   user_id: UserId;
   name: string;
   email: string;

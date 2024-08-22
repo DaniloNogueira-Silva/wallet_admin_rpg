@@ -5,14 +5,18 @@ import {
   InMemorySearchableRepository,
 } from "@core/shared/infra/db/in-memory/in-memory-repository";
 import { User } from "@core/user/domain/user.aggregate";
+import { IUserRepository } from "@core/user/domain/user.repository";
 
-export class UserInMemoryRepository extends InMemorySearchableRepository<
-  User,
-  Uuid
-> {
+export class UserInMemoryRepository
+  extends InMemorySearchableRepository<User, Uuid>
+  implements IUserRepository
+{
   sortableFields: string[] = ["name", "created_at"];
 
-  protected async applyFilter(items: User[], filter: string | null): Promise<User[]> {
+  protected async applyFilter(
+    items: User[],
+    filter: string | null
+  ): Promise<User[]> {
     if (!filter) {
       return items;
     }

@@ -71,7 +71,7 @@ describe("UserModel Integration Test", () => {
     expect(updatedAtAttr).toMatchObject({
       field: "updated_at",
       fieldName: "updated_at",
-      allowNull: true,
+      allowNull: false,
       type: DataType.DATE(3),
     });
 
