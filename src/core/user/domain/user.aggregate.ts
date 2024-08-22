@@ -1,6 +1,7 @@
 import { AggregateRoot } from "@core/shared/domain/aggregate-root";
 import { Uuid } from "@core/shared/domain/value-objects/uuid.vo";
 import UserValidatorFactory from "./user.validator";
+import { UserFakeBuilder } from "./user-fake.builder";
 
 export type UserConstructorProps = {
   user_id?: UserId;
@@ -21,6 +22,7 @@ export type UserCreateCommand = {
 export class UserId extends Uuid {}
 
 export class User extends AggregateRoot {
+
   user_id: UserId;
   name: string;
   email: string;
@@ -68,6 +70,10 @@ export class User extends AggregateRoot {
 
   get entity_id() {
     return this.user_id;
+  }
+
+  static fake() {
+    return UserFakeBuilder;
   }
 
   toJSON() {
