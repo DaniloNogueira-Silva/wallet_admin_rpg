@@ -6,7 +6,7 @@ import {
   Table,
 } from "sequelize-typescript";
 
-@Table({ tableName: "users" })
+@Table({ tableName: "users", timestamps: false })
 export class UserModel extends Model {
   @PrimaryKey
   @Column({ type: DataType.UUID })

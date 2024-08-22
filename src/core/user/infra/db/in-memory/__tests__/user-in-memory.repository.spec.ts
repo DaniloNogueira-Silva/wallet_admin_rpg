@@ -1,5 +1,5 @@
 import { User } from "@core/user/domain/user.aggregate";
-import { UserInMemoryRepository } from "./user-in-memory.repository";
+import { UserInMemoryRepository } from "../user-in-memory.repository";
 
 describe("UserInMemoryRepository", () => {
   let repository: UserInMemoryRepository;
