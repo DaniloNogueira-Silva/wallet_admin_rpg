@@ -1,7 +1,6 @@
 ## valid uuid = 8f4b7b9c-3f7a-4b6c-8b0c-1c9c5b8b9b6a
 
 ### 
-# @name createWallet
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -10,10 +9,6 @@ Content-Type: application/json
     "email": "user_email.com",
     "password": "123"
 }
-
-###
-
-@walletId = {{createWallet.response.body.data.id}}
 
 ###
 GET http://localhost:3000/users
@@ -33,3 +28,33 @@ Content-Type: application/json
 
 ###
 DELETE  http://localhost:3000/users/f47a1c39-c497-4287-9b75-496c6be71f1c
+
+
+## valid uuid = 8f4b7b9c-3f7a-4b6c-8b0c-1c9c5b8b9b6a
+
+### 
+POST http://localhost:3000/wallets
+Content-Type: application/json
+
+{
+    "user_id": "1785d544-c8a3-46aa-aef4-ce2297ff95ca",
+}
+
+###
+GET http://localhost:3000/wallets
+
+###
+GET http://localhost:3000/wallets/390761fa-0546-4db0-9214-0444d6f31d6e
+
+###
+PATCH  http://localhost:3000/wallets/390761fa-0546-4db0-9214-0444d6f31d6e
+Content-Type: application/json
+
+{
+    "name": "User2",
+    "email": "user2_email.com",
+    "password": "1234"
+}
+
+###
+DELETE  http://localhost:3000/wallets/f47a1c39-c497-4287-9b75-496c6be71f1c
