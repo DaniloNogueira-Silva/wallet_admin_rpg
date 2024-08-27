@@ -1,16 +1,16 @@
 import { UserInMemoryRepository } from "@core/user/infra/db/in-memory/user-in-memory.repository";
-import { GetUserUseCase } from "../get-category.use-case";
+import { DeleteUserUseCase } from "../delete-user.use-case";
 import { InvalidUuidError } from "@core/shared/domain/value-objects/uuid.vo";
 import { User, UserId } from "@core/user/domain/user.aggregate";
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 
-describe("GetUserUseCase Unit Tests", () => {
-  let useCase: GetUserUseCase;
+describe("DeleteUserUseCase Unit Tests", () => {
+  let useCase: DeleteUserUseCase;
   let repository: UserInMemoryRepository;
 
   beforeEach(() => {
     repository = new UserInMemoryRepository();
-    useCase = new GetUserUseCase(repository);
+    useCase = new DeleteUserUseCase(repository);
   });
 
   it("should throws error when entity not found", async () => {
@@ -19,31 +19,20 @@ describe("GetUserUseCase Unit Tests", () => {
     );
 
     const userId = new UserId();
+
     await expect(() => useCase.execute({ id: userId.id })).rejects.toThrow(
       new NotFoundError(userId.id, User)
     );
   });
 
-  it("should returns a user", async () => {
+  it("should delete a user", async () => {
     const items = [
-      User.create({
-        name: "test",
-        email: "test@email.com",
-        password: "test",
-      }),
+      new User({ name: "test 1", email: "test", password: "test" }),
     ];
     repository.items = items;
-    const spyFindById = jest.spyOn(repository, "findById");
-    const output = await useCase.execute({ id: items[0].user_id.id });
-    expect(spyFindById).toHaveBeenCalledTimes(1);
-    expect(output).toStrictEqual({
+    await useCase.execute({
       id: items[0].user_id.id,
-      name: "test",
-      email: "test@email.com",
-      password: "test",
-      created_at: items[0].created_at,
-      updated_at: items[0].updated_at,
-      deleted_at: null,
     });
+    expect(repository.items).toHaveLength(0);
   });
 });

@@ -3,7 +3,7 @@ import { UserSequelizeRepository } from "@core/user/infra/db/sequelize/user-sequ
 import { UserModel } from "@core/user/infra/db/sequelize/user.model";
 import { setupSequelize } from "@core/shared/infra/testing/helpers";
 import { User } from "@core/user/domain/user.aggregate";
-import { ListUserUseCase } from "../list-categories.use-case";
+import { ListUserUseCase } from "../list-users.use-case";
 
 describe("ListUserUseCase Integration Tests", () => {
   let useCase: ListUserUseCase;

@@ -1,5 +1,5 @@
 import { IUseCase } from "@core/shared/application/use-case.interface";
-import { UpdateUserInput } from "./update-category.input";
+import { UpdateUserInput } from "./update-user.input";
 import { IUserRepository } from "@core/user/domain/user.repository";
 import { User, UserId } from "@core/user/domain/user.aggregate";
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";

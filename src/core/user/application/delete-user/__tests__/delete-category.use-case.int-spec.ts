@@ -1,19 +1,19 @@
 import { UserSequelizeRepository } from "@core/user/infra/db/sequelize/user-sequelize-repository";
-import { GetUserUseCase } from "../get-category.use-case";
+import { DeleteUserUseCase } from "../delete-user.use-case";
 import { UserModel } from "@core/user/infra/db/sequelize/user.model";
 import { setupSequelize } from "@core/shared/infra/testing/helpers";
 import { User, UserId } from "@core/user/domain/user.aggregate";
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 
-describe("GetUserUseCase Integration Tests", () => {
-  let useCase: GetUserUseCase;
+describe("DeleteUserUseCase Integration Tests", () => {
+  let useCase: DeleteUserUseCase;
   let repository: UserSequelizeRepository;
 
   setupSequelize({ models: [UserModel] });
 
   beforeEach(() => {
     repository = new UserSequelizeRepository(UserModel);
-    useCase = new GetUserUseCase(repository);
+    useCase = new DeleteUserUseCase(repository);
   });
 
   it("should throws error when entity not found", async () => {
@@ -23,18 +23,12 @@ describe("GetUserUseCase Integration Tests", () => {
     );
   });
 
-  it("should returns a user", async () => {
+  it("should delete a user", async () => {
     const user = User.fake().aUser().build();
     await repository.insert(user);
-    const output = await useCase.execute({ id: user.user_id.id });
-    expect(output).toStrictEqual({
+    await useCase.execute({
       id: user.user_id.id,
-      name: user.name,
-      email: user.email,
-      password: user.password,
-      created_at: user.created_at,
-      updated_at: user.updated_at,
-      deleted_at: user.deleted_at,
     });
+    await expect(repository.findById(user.user_id)).resolves.toBeNull();
   });
 });

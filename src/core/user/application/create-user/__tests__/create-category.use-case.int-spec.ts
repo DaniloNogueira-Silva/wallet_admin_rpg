@@ -1,5 +1,5 @@
 import { UserSequelizeRepository } from "@core/user/infra/db/sequelize/user-sequelize-repository";
-import { CreateUserUseCase } from "../create-category.use-case";
+import { CreateUserUseCase } from "../create-user.use-case";
 import { setupSequelize } from "@core/shared/infra/testing/helpers";
 import { UserModel } from "@core/user/infra/db/sequelize/user.model";
 import { UserId } from "@core/user/domain/user.aggregate";

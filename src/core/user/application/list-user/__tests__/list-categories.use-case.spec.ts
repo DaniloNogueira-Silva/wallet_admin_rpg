@@ -1,5 +1,5 @@
 import { UserInMemoryRepository } from "@core/user/infra/db/in-memory/user-in-memory.repository";
-import { ListUserUseCase } from "../list-categories.use-case";
+import { ListUserUseCase } from "../list-users.use-case";
 import { UserSearchResult } from "@core/user/domain/user.repository";
 import { User } from "@core/user/domain/user.aggregate";
 import { UserOutputMapper } from "../../common/user-output";

@@ -1,0 +1,35 @@
+## valid uuid = 8f4b7b9c-3f7a-4b6c-8b0c-1c9c5b8b9b6a
+
+### 
+# @name createCategory
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "User1",
+    "email": "user_email.com",
+    "password": "123"
+}
+
+###
+
+@categoryId = {{createCategory.response.body.data.id}}
+
+###
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/390761fa-0546-4db0-9214-0444d6f31d6e
+
+###
+PATCH  http://localhost:3000/users/390761fa-0546-4db0-9214-0444d6f31d6e
+Content-Type: application/json
+
+{
+    "name": "User2",
+    "email": "user2_email.com",
+    "password": "1234"
+}
+
+###
+DELETE  http://localhost:3000/users/f47a1c39-c497-4287-9b75-496c6be71f1c

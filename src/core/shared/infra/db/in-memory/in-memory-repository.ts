@@ -1,4 +1,5 @@
 import { Entity } from "@core/shared/domain/entity";
+import { InvalidArgumentError } from "@core/shared/domain/errors/invalid-argument.error";
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 import {
   IRepository,
@@ -13,7 +14,7 @@ import { ValueObject } from "@core/shared/domain/value-object";
 
 export abstract class InMemoryRepository<
   E extends Entity,
-  EntityId extends ValueObject
+  EntityId extends ValueObject,
 > implements IRepository<E, EntityId>
 {
   items: E[] = [];
@@ -21,8 +22,7 @@ export abstract class InMemoryRepository<
   async insert(entity: E): Promise<void> {
     this.items.push(entity);
   }
-
-  async bulkInsert(entities: E[]): Promise<void> {
+  async bulkInsert(entities: any[]): Promise<void> {
     this.items.push(...entities);
   }
 
@@ -51,17 +51,52 @@ export abstract class InMemoryRepository<
     return typeof item === "undefined" ? null : item;
   }
 
-  async findAll(): Promise<E[]> {
+  async findAll(): Promise<any[]> {
     return this.items;
   }
 
-  abstract getEntity(): new (...args: E[]) => E;
+  async findByIds(ids: EntityId[]): Promise<E[]> {
+    //avoid to return repeated items
+    return this.items.filter((entity) => {
+      return ids.some((id) => entity.entity_id.equals(id));
+    });
+  }
+
+  async existsById(
+    ids: EntityId[]
+  ): Promise<{ exists: EntityId[]; not_exists: EntityId[] }> {
+    if (!ids.length) {
+      throw new InvalidArgumentError(
+        "ids must be an array with at least one element"
+      );
+    }
+
+    if (this.items.length === 0) {
+      return {
+        exists: [],
+        not_exists: ids,
+      };
+    }
+
+    const existsId = new Set<EntityId>();
+    const notExistsId = new Set<EntityId>();
+    ids.forEach((id) => {
+      const item = this.items.find((entity) => entity.entity_id.equals(id));
+      item ? existsId.add(id) : notExistsId.add(id);
+    });
+    return {
+      exists: Array.from(existsId.values()),
+      not_exists: Array.from(notExistsId.values()),
+    };
+  }
+
+  abstract getEntity(): new (...args: any[]) => E;
 }
 
 export abstract class InMemorySearchableRepository<
     E extends Entity,
     EntityId extends ValueObject,
-    Filter = string
+    Filter = string,
   >
   extends InMemoryRepository<E, EntityId>
   implements ISearchableRepository<E, EntityId, Filter>
@@ -97,8 +132,8 @@ export abstract class InMemorySearchableRepository<
     page: SearchParams["page"],
     per_page: SearchParams["per_page"]
   ) {
-    const start = (page - 1) * per_page;
-    const limit = start + per_page;
+    const start = (page - 1) * per_page; // 0 * 15 = 0
+    const limit = start + per_page; // 0 + 15 = 15
     return items.slice(start, limit);
   }
 
@@ -113,9 +148,7 @@ export abstract class InMemorySearchableRepository<
     }
 
     return [...items].sort((a, b) => {
-      // @ts-ignore
       const aValue = custom_getter ? custom_getter(sort, a) : a[sort];
-      // @ts-ignore
       const bValue = custom_getter ? custom_getter(sort, b) : b[sort];
       if (aValue < bValue) {
         return sort_dir === "asc" ? -1 : 1;
