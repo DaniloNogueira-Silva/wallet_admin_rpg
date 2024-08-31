@@ -1,7 +1,7 @@
 ## valid uuid = 8f4b7b9c-3f7a-4b6c-8b0c-1c9c5b8b9b6a
 
 ### 
-# @name createCategory
+# @name createWallet
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ###
 
-@categoryId = {{createCategory.response.body.data.id}}
+@walletId = {{createWallet.response.body.data.id}}
 
 ###
 GET http://localhost:3000/users
