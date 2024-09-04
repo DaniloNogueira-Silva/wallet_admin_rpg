@@ -58,3 +58,12 @@ Content-Type: application/json
 
 ###
 DELETE  http://localhost:3000/wallets/f47a1c39-c497-4287-9b75-496c6be71f1c
+
+
+### 
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+    "name": "Lazer"
+}
