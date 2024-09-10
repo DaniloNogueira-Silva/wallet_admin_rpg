@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npm install mysql2",
-     "build": "npx nest build",
-  "vercel-build": "npm install --include=dev && npm run build",
+    "vercel-build": "npm install --include=dev && npm install mysql2 && npm run build",
+    "build": "npx nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

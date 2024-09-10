@@ -3,12 +3,10 @@ import { AppModule } from "./app.module";
 import { applyGlobalConfig } from "./nest-modules/global-config";
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
-    logger: process.env.NODE_ENV === "production" ? console : undefined,
-  });
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000);
 
   applyGlobalConfig(app);
 
-  await app.listen(3000);
 }
 bootstrap();
