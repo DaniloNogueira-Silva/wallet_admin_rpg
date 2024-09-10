@@ -2,7 +2,7 @@ import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { applyGlobalConfig } from "./nest-modules/global-config";
 
-export async function bootstrap() {
+async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: process.env.NODE_ENV === "development" ? console : undefined,
   });
@@ -11,4 +11,4 @@ export async function bootstrap() {
   applyGlobalConfig(app);
 
 }
-bootstrap();
+export default bootstrap();
