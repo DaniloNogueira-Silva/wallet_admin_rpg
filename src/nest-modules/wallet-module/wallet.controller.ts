@@ -1,8 +1,4 @@
-import { CreateWalletUseCase } from "src/core/wallet/application/use-cases/create-wallet/create-wallet.use-case";
-import { DeleteWalletUseCase } from "src/core/wallet/application/use-cases/delete-wallet/delete-wallet.use-case";
-import { GetWalletUseCase } from "src/core/wallet/application/use-cases/get-wallet/get-wallet.use-case";
-import { ListWalletsUseCase } from "src/core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
-import { UpdateWalletUseCase } from "src/core/wallet/application/use-cases/update-wallet/update-wallet.use-case";
+
 import {
   Controller,
   Get,
@@ -22,6 +18,11 @@ import { WalletCollectionPresenter, WalletPresenter } from "./walllet.presenter"
 import { SearchWalletsDto } from "./dto/search-walllets.dto";
 import { CreateWalletDto } from "./dto/create-walllet.dto";
 import { UpdateWalletDto } from "./dto/update-walllet.dto";
+import { CreateWalletUseCase } from "src/core/wallet/application/use-cases/create-wallet/create-wallet.use-case";
+import { UpdateWalletUseCase } from "src/core/wallet/application/use-cases/update-wallet/update-wallet.use-case";
+import { DeleteWalletUseCase } from "src/core/wallet/application/use-cases/delete-wallet/delete-wallet.use-case";
+import { GetWalletUseCase } from "src/core/wallet/application/use-cases/get-wallet/get-wallet.use-case";
+import { ListWalletsUseCase } from "src/core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
 
 
 @Controller("wallets")

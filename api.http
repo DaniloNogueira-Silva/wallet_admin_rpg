@@ -37,7 +37,7 @@ POST http://localhost:3000/wallets
 Content-Type: application/json
 
 {
-    "user_id": "1785d544-c8a3-46aa-aef4-ce2297ff95ca",
+    "user_id": "0f521fd0-c180-4c22-8fe0-68702223917a"
 }
 
 ###

@@ -1,7 +1,4 @@
-import { DeleteUserUseCase } from "src/core/user/application/delete-user/delete-user.use-case";
-import { GetUserUseCase } from "src/core/user/application/get-user/get-user.use-case";
-import { ListUserUseCase } from "src/core/user/application/list-user/list-user.use-case";
-import { UpdateUserUseCase } from "src/core/user/application/update-user/update-user.use-case";
+
 import {
   Controller,
   Get,
@@ -22,6 +19,10 @@ import { UserCollectionPresenter, UserPresenter } from "./users.presenter";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { UserOutput } from "src/core/user/application/common/user-output";
 import { CreateUserUseCase } from "src/core/user/application/create-user/create-user.use-case";
+import { UpdateUserUseCase } from "src/core/user/application/update-user/update-user.use-case";
+import { DeleteUserUseCase } from "src/core/user/application/delete-user/delete-user.use-case";
+import { GetUserUseCase } from "src/core/user/application/get-user/get-user.use-case";
+import { ListUserUseCase } from "src/core/user/application/list-user/list-user.use-case";
 
 @Controller("users")
 export class UsersController {
