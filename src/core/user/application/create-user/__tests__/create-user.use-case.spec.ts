@@ -1,4 +1,4 @@
-import { UserInMemoryRepository } from "src/core/user/infra/db/in-memory/user-in-memory.repository";
+import { UserInMemoryRepository } from "../../../../user/infra/db/in-memory/user-in-memory.repository";
 import { CreateUserUseCase } from "../create-user.use-case";
 
 describe("CreateUserUseCase Unit Tests", () => {

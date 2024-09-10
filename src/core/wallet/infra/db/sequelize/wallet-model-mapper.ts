@@ -1,4 +1,4 @@
-import { LoadEntityError } from "src/core/shared/domain/validators/validator.error";
+import { LoadEntityError } from "../../../../shared/domain/validators/validator.error";
 import { Wallet, WalletId } from "../../../domain/wallet.aggregate";
 import { WalletModel } from "./wallet.model";
 

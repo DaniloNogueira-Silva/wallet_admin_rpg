@@ -1,4 +1,4 @@
-import { LoadEntityError } from "src/core/shared/domain/validators/validator.error";
+import { LoadEntityError } from "../../../../shared/domain/validators/validator.error";
 import { Category, CategoryId } from "../../../domain/category.aggregate";
 import { CategoryModel } from "./category.model";
 

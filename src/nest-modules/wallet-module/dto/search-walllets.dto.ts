@@ -1,5 +1,5 @@
 import { SortDirection } from "../../../core/shared/domain/repository/search-params";
-import { ListWalletsInput } from "src/core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
+import { ListWalletsInput } from "../../../core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
 
 export class SearchWalletsDto implements ListWalletsInput {
   page?: number;

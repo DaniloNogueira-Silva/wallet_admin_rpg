@@ -1,11 +1,11 @@
-import { SortDirection } from "src/core/shared/domain/repository/search-params";
-import { Uuid } from "src/core/shared/domain/value-objects/uuid.vo";
+import { SortDirection } from "../../../../shared/domain/repository/search-params";
+import { Uuid } from "../../../../shared/domain/value-objects/uuid.vo";
 import {
   InMemoryRepository,
   InMemorySearchableRepository,
-} from "src/core/shared/infra/db/in-memory/in-memory-repository";
-import { User } from "src/core/user/domain/user.aggregate";
-import { IUserRepository } from "src/core/user/domain/user.repository";
+} from "../../../../shared/infra/db/in-memory/in-memory-repository";
+import { User } from "../../../../user/domain/user.aggregate";
+import { IUserRepository } from "../../../../user/domain/user.repository";
 
 export class UserInMemoryRepository
   extends InMemorySearchableRepository<User, Uuid>

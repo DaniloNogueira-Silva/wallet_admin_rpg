@@ -1,4 +1,4 @@
-import { EntityValidationError } from "src/core/shared/domain/validators/validator.error";
+import { EntityValidationError } from "../../../../shared/domain/validators/validator.error";
 import { IUseCase } from "../../../../shared/application/use-case.interface";
 import { NotFoundError } from "../../../../shared/domain/errors/not-found.error";
 import { Wallet, WalletId } from "../../../domain/wallet.aggregate";

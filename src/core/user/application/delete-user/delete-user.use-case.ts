@@ -1,6 +1,6 @@
-import { IUseCase } from "src/core/shared/application/use-case.interface";
-import { UserId } from "src/core/user/domain/user.aggregate";
-import { IUserRepository } from "src/core/user/domain/user.repository";
+import { IUseCase } from "../../../shared/application/use-case.interface";
+import { UserId } from "../../../user/domain/user.aggregate";
+import { IUserRepository } from "../../../user/domain/user.repository";
 
 export class DeleteUserUseCase
   implements IUseCase<DeleteUserInput, DeleteUserOutput>

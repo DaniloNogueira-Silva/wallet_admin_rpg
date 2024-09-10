@@ -1,7 +1,7 @@
 import { Transform } from "class-transformer";
 import { CollectionPresenter } from "../shared-module/collection.presenter";
-import { UserOutput } from "src/core/user/application/common/user-output";
-import { ListUserOutput } from "src/core/user/application/list-user/list-user.use-case";
+import { UserOutput } from "../../core/user/application/common/user-output";
+import { ListUserOutput } from "../../core/user/application/list-user/list-user.use-case";
 
 export class UserPresenter {
   id: string;

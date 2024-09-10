@@ -1,11 +1,11 @@
 import {
   IRepository,
   ISearchableRepository,
-} from "src/core/shared/domain/repository/repository-interface";
+} from "../../shared/domain/repository/repository-interface";
 import { User } from "./user.aggregate";
-import { Uuid } from "src/core/shared/domain/value-objects/uuid.vo";
-import { SearchParams } from "src/core/shared/domain/repository/search-params";
-import { SearchResult } from "src/core/shared/domain/repository/search-result";
+import { Uuid } from "../../shared/domain/value-objects/uuid.vo";
+import { SearchParams } from "../../shared/domain/repository/search-params";
+import { SearchResult } from "../../shared/domain/repository/search-result";
 
 export type UserFilter = string;
 

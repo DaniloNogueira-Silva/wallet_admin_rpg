@@ -1,15 +1,12 @@
-import { SortDirection } from "src/core/shared/domain/repository/search-params";
+import { SortDirection } from "../../../core/shared/domain/repository/search-params";
+import { CreateWalletOutput } from "../../../core/wallet/application/use-cases/create-wallet/create-wallet.use-case";
+import { UpdateWalletOutput } from "../../../core/wallet/application/use-cases/update-wallet/update-wallet.use-case";
+import { UpdateWalletInput } from "../../../core/wallet/application/use-cases/update-wallet/update-wallet.input";
+import { GetWalletOutput } from "../../../core/wallet/application/use-cases/get-wallet/get-wallet.use-case";
+import { ListWalletsOutput } from "../../../core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
 import { WalletsController } from "../wallet.controller";
-import { CreateWalletOutput } from "src/core/wallet/application/use-cases/create-wallet/create-wallet.use-case";
-import { CreateWalletDto } from "../dto/create-wallet.dto";
-import {
-  WalletCollectionPresenter,
-  WalletPresenter,
-} from "../wallet.presenter";
-import { UpdateWalletOutput } from "src/core/wallet/application/use-cases/update-wallet/update-wallet.use-case";
-import { UpdateWalletInput } from "src/core/wallet/application/use-cases/update-wallet/update-wallet.input";
-import { GetWalletOutput } from "src/core/wallet/application/use-cases/get-wallet/get-wallet.use-case";
-import { ListWalletsOutput } from "src/core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
+import { CreateWalletDto } from "../dto/create-walllet.dto";
+import { WalletCollectionPresenter, WalletPresenter } from "../walllet.presenter";
 
 describe("WalletsController Unit Tests", () => {
   let controller: WalletsController;

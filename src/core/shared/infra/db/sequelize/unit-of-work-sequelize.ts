@@ -1,7 +1,7 @@
 import { Sequelize, Transaction } from 'sequelize';
 
 import { AggregateRoot } from '../../../domain/aggregate-root';
-import { IUnitOfWork } from 'src/core/shared/domain/unit-of-work.interface';
+import { IUnitOfWork } from '../../../../shared/domain/unit-of-work.interface';
 
 export class UnitOfWorkSequelize implements IUnitOfWork {
   private transaction: Transaction | null;

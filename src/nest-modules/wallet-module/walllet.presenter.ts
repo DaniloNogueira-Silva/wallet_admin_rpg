@@ -1,6 +1,6 @@
 import { CollectionPresenter } from "../shared-module/collection.presenter";
-import { WalletOutput } from "src/core/wallet/application/use-cases/common/wallet-output";
-import { ListWalletsOutput } from "src/core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
+import { WalletOutput } from "../../core/wallet/application/use-cases/common/wallet-output";
+import { ListWalletsOutput } from "../../core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
 
 export class WalletPresenter {
   id: string;

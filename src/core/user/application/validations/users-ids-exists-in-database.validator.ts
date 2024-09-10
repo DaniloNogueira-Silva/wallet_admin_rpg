@@ -1,4 +1,4 @@
-import { Either } from 'src/core/shared/domain/either';
+import { Either } from '../../../shared/domain/either';
 import { NotFoundError } from '../../../shared/domain/errors/not-found.error';
 import { User, UserId } from '../../domain/user.aggregate';
 import { IUserRepository } from '../../domain/user.repository';

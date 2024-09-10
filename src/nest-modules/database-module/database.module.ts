@@ -4,9 +4,9 @@ import { ConfigService } from '@nestjs/config';
 import { CONFIG_SCHEMA_TYPE } from '../config-module/config.module';
 import { UnitOfWorkSequelize } from '../../core/shared/infra/db/sequelize/unit-of-work-sequelize';
 import { Sequelize } from 'sequelize';
-import { UserModel } from 'src/core/user/infra/db/sequelize/user.model';
-import { WalletModel } from 'src/core/wallet/infra/db/sequelize/wallet.model';
-import { CategoryModel } from 'src/core/category/infra/db/sequelize/category.model';
+import { UserModel } from '../../core/user/infra/db/sequelize/user.model';
+import { WalletModel } from '../../core/wallet/infra/db/sequelize/wallet.model';
+import { CategoryModel } from '../../core/category/infra/db/sequelize/category.model';
 
 const models = [
   UserModel,

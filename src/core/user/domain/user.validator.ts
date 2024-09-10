@@ -1,7 +1,7 @@
 import { MaxLength } from "class-validator";
 import { User } from "./user.aggregate";
-import { ClassValidatorFields } from "src/core/shared/domain/validators/class-validator-fields";
-import { Notification } from "src/core/shared/domain/validators/notification";
+import { ClassValidatorFields } from "../../shared/domain/validators/class-validator-fields";
+import { Notification } from "../../shared/domain/validators/notification";
 
 export class UserRules {
   @MaxLength(255, { groups: ["name"] })

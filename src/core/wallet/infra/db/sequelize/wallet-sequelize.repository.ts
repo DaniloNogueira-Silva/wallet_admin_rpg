@@ -1,5 +1,4 @@
 import { Op, literal } from "sequelize";
-import { NotFoundError } from "../../../../shared/domain/errors/not-found.error";
 import { Wallet, WalletId } from "../../../domain/wallet.aggregate";
 import {
   WalletSearchParams,
@@ -9,6 +8,7 @@ import {
 import { WalletModel } from "./wallet.model";
 import { WalletModelMapper } from "./wallet-model-mapper";
 import { SortDirection } from "../../../../shared/domain/repository/search-params";
+import { NotFoundError } from "../../../../shared/domain/errors/not-found.error";
 import { InvalidArgumentError } from "../../../../shared/domain/errors/invalid-argument.error";
 
 export class WalletSequelizeRepository implements IWalletRepository {

@@ -1,4 +1,4 @@
-import { EntityValidationError } from 'src/core/shared/domain/validators/validator.error';
+import { EntityValidationError } from '../../../../shared/domain/validators/validator.error';
 import { IUseCase } from '../../../../shared/application/use-case.interface';
 import { Category } from '../../../domain/category.aggregate';
 import { ICategoryRepository } from '../../../domain/category.repository';

@@ -1,7 +1,7 @@
-import { AggregateRoot } from "src/core/shared/domain/aggregate-root";
-import { Uuid } from "src/core/shared/domain/value-objects/uuid.vo";
 import UserValidatorFactory from "./user.validator";
 import { UserFakeBuilder } from "./user-fake.builder";
+import { AggregateRoot } from "../../shared/domain/aggregate-root";
+import { Uuid } from "../../shared/domain/value-objects/uuid.vo";
 
 export type UserConstructorProps = {
   user_id?: UserId;

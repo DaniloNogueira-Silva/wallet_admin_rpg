@@ -1,9 +1,9 @@
-import { IUseCase } from "src/core/shared/application/use-case.interface";
+import { IUseCase } from "../../../shared/application/use-case.interface";
 import { UpdateUserInput } from "./update-user.input";
-import { IUserRepository } from "src/core/user/domain/user.repository";
-import { User, UserId } from "src/core/user/domain/user.aggregate";
-import { NotFoundError } from "src/core/shared/domain/errors/not-found.error";
-import { EntityValidationError } from "src/core/shared/domain/validators/validator.error";
+import { IUserRepository } from "../../../user/domain/user.repository";
+import { User, UserId } from "../../../user/domain/user.aggregate";
+import { NotFoundError } from "../../../shared/domain/errors/not-found.error";
+import { EntityValidationError } from "../../../shared/domain/validators/validator.error";
 import { UserOutput, UserOutputMapper } from "../common/user-output";
 
 export class UpdateUserUseCase

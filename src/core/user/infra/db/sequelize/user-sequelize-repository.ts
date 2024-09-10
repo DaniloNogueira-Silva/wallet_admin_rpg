@@ -8,7 +8,7 @@ import {
 } from "../../../domain/user.repository";
 import { UserModel } from "./user.model";
 import { SortDirection } from "../../../../shared/domain/repository/search-params";
-import { InvalidArgumentError } from "src/core/shared/domain/errors/invalid-argument.error";
+import { InvalidArgumentError } from "../../../../shared/domain/errors/invalid-argument.error";
 import { UserModelMapper } from "./user-model-mapper";
 
 export class UserSequelizeRepository implements IUserRepository {

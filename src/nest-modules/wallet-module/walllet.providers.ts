@@ -1,14 +1,15 @@
-import { WalletsIdExistsInDatabaseValidator } from "src/core/wallet/application/validations/wallets-ids-exists-in-database.validator";
+
 import { getModelToken } from "@nestjs/sequelize";
 import { WalletInMemoryRepository } from "../../core/wallet/infra/db/in-memory/wallet-in-memory.repository";
-import { WalletSequelizeRepository } from "src/core/wallet/infra/db/sequelize/wallet-sequelize.repository";
-import { WalletModel } from "src/core/wallet/infra/db/sequelize/wallet.model";
-import { CreateWalletUseCase } from "src/core/wallet/application/use-cases/create-wallet/create-wallet.use-case";
-import { IWalletRepository } from "src/core/wallet/domain/wallet.repository";
-import { UpdateWalletUseCase } from "src/core/wallet/application/use-cases/update-wallet/update-wallet.use-case";
-import { ListWalletsUseCase } from "src/core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
-import { GetWalletUseCase } from "src/core/wallet/application/use-cases/get-wallet/get-wallet.use-case";
-import { DeleteWalletUseCase } from "src/core/wallet/application/use-cases/delete-wallet/delete-wallet.use-case";
+import { WalletSequelizeRepository } from "../../core/wallet/infra/db/sequelize/wallet-sequelize.repository";
+import { WalletModel } from "../../core/wallet/infra/db/sequelize/wallet.model";
+import { CreateWalletUseCase } from "../../core/wallet/application/use-cases/create-wallet/create-wallet.use-case";
+import { IWalletRepository } from "../../core/wallet/domain/wallet.repository";
+import { UpdateWalletUseCase } from "../../core/wallet/application/use-cases/update-wallet/update-wallet.use-case";
+import { ListWalletsUseCase } from "../../core/wallet/application/use-cases/list-wallets/list-wallets.use-case";
+import { GetWalletUseCase } from "../../core/wallet/application/use-cases/get-wallet/get-wallet.use-case";
+import { DeleteWalletUseCase } from "../../core/wallet/application/use-cases/delete-wallet/delete-wallet.use-case";
+import { WalletsIdExistsInDatabaseValidator } from "../../core/wallet/application/validations/wallets-ids-exists-in-database.validator";
 
 export const REPOSITORIES = {
   WALLET_REPOSITORY: {

@@ -1,4 +1,4 @@
-import { User } from "src/core/user/domain/user.aggregate";
+import { User } from "../../domain/user.aggregate";
 
 export type UserOutput = {
   id: string;

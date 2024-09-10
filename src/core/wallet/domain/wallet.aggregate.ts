@@ -1,8 +1,8 @@
-import { AggregateRoot } from "../../shared/domain/aggregate-root";
-import { ValueObject } from "../../shared/domain/value-object";
 import { Uuid } from "../../shared/domain/value-objects/uuid.vo";
 import { WalletFakeBuilder } from "./wallet-fake.builder";
 import { WalletValidatorFactory } from "./wallet.validator";
+import { AggregateRoot } from "../../shared/domain/aggregate-root";
+import { ValueObject } from "../../shared/domain/value-object";
 
 export type WalletConstructorProps = {
   wallet_id?: WalletId;
@@ -45,7 +45,6 @@ export class Wallet extends AggregateRoot {
       ...props,
       user_id: props.user_id,
       created_at: new Date(),
-
     });
     wallet.validate(["user_id", "balance", "savings"]);
     return wallet;

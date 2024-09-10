@@ -1,8 +1,8 @@
 
-import { Uuid } from "src/core/shared/domain/value-objects/uuid.vo";
+import { Uuid } from "../../../../shared/domain/value-objects/uuid.vo";
 import { InMemoryRepository } from "./in-memory-repository";
-import { Entity } from "src/core/shared/domain/entity";
-import { NotFoundError } from "src/core/shared/domain/errors/not-found.error";
+import { Entity } from "../../../../shared/domain/entity";
+import { NotFoundError } from "../../../../shared/domain/errors/not-found.error";
 
 // Definindo o tipo para as propriedades necessárias para construir uma StubEntity
 type StubEntityConstructorProps = {

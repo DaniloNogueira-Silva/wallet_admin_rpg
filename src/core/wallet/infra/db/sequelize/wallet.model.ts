@@ -1,4 +1,4 @@
-import { UserModel } from "src/core/user/infra/db/sequelize/user.model";
+import { UserModel } from "../../../../user/infra/db/sequelize/user.model";
 import {
   Column,
   DataType,

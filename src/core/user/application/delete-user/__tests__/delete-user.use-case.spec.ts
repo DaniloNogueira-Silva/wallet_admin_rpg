@@ -1,8 +1,8 @@
-import { UserInMemoryRepository } from "src/core/user/infra/db/in-memory/user-in-memory.repository";
+import { UserInMemoryRepository } from "../../../../user/infra/db/in-memory/user-in-memory.repository";
 import { DeleteUserUseCase } from "../delete-user.use-case";
-import { InvalidUuidError } from "src/core/shared/domain/value-objects/uuid.vo";
-import { User, UserId } from "src/core/user/domain/user.aggregate";
-import { NotFoundError } from "src/core/shared/domain/errors/not-found.error";
+import { InvalidUuidError } from "../../../../shared/domain/value-objects/uuid.vo";
+import { User, UserId } from "../../../../user/domain/user.aggregate";
+import { NotFoundError } from "../../../../shared/domain/errors/not-found.error";
 
 describe("DeleteUserUseCase Unit Tests", () => {
   let useCase: DeleteUserUseCase;
