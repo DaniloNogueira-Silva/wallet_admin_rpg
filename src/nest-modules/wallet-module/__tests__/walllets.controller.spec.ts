@@ -1,11 +1,11 @@
 import { SortDirection } from "src/core/shared/domain/repository/search-params";
-import { WalletsController } from "../walllet.controller";
+import { WalletsController } from "../wallet.controller";
 import { CreateWalletOutput } from "src/core/wallet/application/use-cases/create-wallet/create-wallet.use-case";
-import { CreateWalletDto } from "../dto/create-walllet.dto";
+import { CreateWalletDto } from "../dto/create-wallet.dto";
 import {
   WalletCollectionPresenter,
   WalletPresenter,
-} from "../walllet.presenter";
+} from "../wallet.presenter";
 import { UpdateWalletOutput } from "src/core/wallet/application/use-cases/update-wallet/update-wallet.use-case";
 import { UpdateWalletInput } from "src/core/wallet/application/use-cases/update-wallet/update-wallet.input";
 import { GetWalletOutput } from "src/core/wallet/application/use-cases/get-wallet/get-wallet.use-case";

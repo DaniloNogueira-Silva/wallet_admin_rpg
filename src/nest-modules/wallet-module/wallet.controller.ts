@@ -16,14 +16,13 @@ import {
   HttpCode,
   Query,
 } from "@nestjs/common";
-import { CreateWalletDto } from "./dto/create-walllet.dto";
-import { SearchWalletsDto } from "./dto/search-walllets.dto";
-import { UpdateWalletDto } from "./dto/update-walllet.dto";
+
 import { WalletOutput } from "src/core/wallet/application/use-cases/common/wallet-output";
-import {
-  WalletCollectionPresenter,
-  WalletPresenter,
-} from "./walllet.presenter";
+import { WalletCollectionPresenter, WalletPresenter } from "./walllet.presenter";
+import { SearchWalletsDto } from "./dto/search-walllets.dto";
+import { CreateWalletDto } from "./dto/create-walllet.dto";
+import { UpdateWalletDto } from "./dto/update-walllet.dto";
+
 
 @Controller("wallets")
 export class WalletsController {

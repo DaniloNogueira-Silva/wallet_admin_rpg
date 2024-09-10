@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { WalletsController } from './walllet.controller';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { WalletModel } from '../../core/wallet/infra/db/sequelize/wallet.model';
+import { WalletsController } from './wallet.controller';
 import { WALLET_PROVIDERS } from './walllet.providers';
 
 @Module({
