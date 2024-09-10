@@ -13,6 +13,9 @@
         }
     ],
     "env": {
-    "NODE_ENV": "development"
-  }
+        "NODE_ENV": "development",
+        "dependencies": {
+            "mysql2": "^3.6.1"
+        }
+    }
 }
