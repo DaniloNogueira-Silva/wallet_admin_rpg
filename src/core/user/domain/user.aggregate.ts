@@ -1,5 +1,5 @@
-import { AggregateRoot } from "@core/shared/domain/aggregate-root";
-import { Uuid } from "@core/shared/domain/value-objects/uuid.vo";
+import { AggregateRoot } from "src/core/shared/domain/aggregate-root";
+import { Uuid } from "src/core/shared/domain/value-objects/uuid.vo";
 import UserValidatorFactory from "./user.validator";
 import { UserFakeBuilder } from "./user-fake.builder";
 

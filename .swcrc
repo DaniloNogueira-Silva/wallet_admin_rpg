@@ -12,12 +12,7 @@
         "decoratorMetadata": true
       },
       "baseUrl": "./",
-      "keepClassNames": true,
-      "paths": {
-        "@core/*": [
-          "./src/core/*"
-        ]
-      }
+      "keepClassNames": true
     },
     "minify": false
   }

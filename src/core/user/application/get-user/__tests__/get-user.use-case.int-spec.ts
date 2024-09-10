@@ -1,9 +1,9 @@
-import { UserSequelizeRepository } from "@core/user/infra/db/sequelize/user-sequelize-repository";
+import { UserSequelizeRepository } from "src/core/user/infra/db/sequelize/user-sequelize-repository";
 import { GetUserUseCase } from "../get-user.use-case";
-import { UserModel } from "@core/user/infra/db/sequelize/user.model";
-import { setupSequelize } from "@core/shared/infra/testing/helpers";
-import { User, UserId } from "@core/user/domain/user.aggregate";
-import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
+import { UserModel } from "src/core/user/infra/db/sequelize/user.model";
+import { setupSequelize } from "src/core/shared/infra/testing/helpers";
+import { User, UserId } from "src/core/user/domain/user.aggregate";
+import { NotFoundError } from "src/core/shared/domain/errors/not-found.error";
 
 describe("GetUserUseCase Integration Tests", () => {
   let useCase: GetUserUseCase;

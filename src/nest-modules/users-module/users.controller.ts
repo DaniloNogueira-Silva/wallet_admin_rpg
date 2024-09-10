@@ -1,8 +1,8 @@
-import { CreateUserUseCase } from "@core/user/application/create-user/create-user.use-case";
-import { DeleteUserUseCase } from "@core/user/application/delete-user/delete-user.use-case";
-import { GetUserUseCase } from "@core/user/application/get-user/get-user.use-case";
-import { ListUserUseCase } from "@core/user/application/list-user/list-user.use-case";
-import { UpdateUserUseCase } from "@core/user/application/update-user/update-user.use-case";
+import { CreateUserUseCase } from "src/core/user/application/create-user/create-user.use-case";
+import { DeleteUserUseCase } from "src/core/user/application/delete-user/delete-user.use-case";
+import { GetUserUseCase } from "src/core/user/application/get-user/get-user.use-case";
+import { ListUserUseCase } from "src/core/user/application/list-user/list-user.use-case";
+import { UpdateUserUseCase } from "src/core/user/application/update-user/update-user.use-case";
 import {
   Controller,
   Get,
@@ -21,7 +21,7 @@ import { CreateUserDto } from "./dto/create-user.dto";
 import { SearchUsersDto } from "./dto/search-users.dto";
 import { UserCollectionPresenter, UserPresenter } from "./users.presenter";
 import { UpdateUserDto } from "./dto/update-user.dto";
-import { UserOutput } from "@core/user/application/common/user-output";
+import { UserOutput } from "src/core/user/application/common/user-output";
 
 @Controller("users")
 export class UsersController {

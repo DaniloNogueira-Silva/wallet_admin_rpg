@@ -1,3 +1,3 @@
-import { CreateUserInput } from "@core/user/application/create-user/create-user.input";
+import { CreateUserInput } from "src/core/user/application/create-user/create-user.input";
 
 export class CreateUserDto extends CreateUserInput {}

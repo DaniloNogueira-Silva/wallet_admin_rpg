@@ -1,5 +1,5 @@
 import { SortDirection } from "../../../../shared/domain/repository/search-params";
-import { InMemorySearchableRepository } from "@core/shared/infra/db/in-memory/in-memory-repository";
+import { InMemorySearchableRepository } from "src/core/shared/infra/db/in-memory/in-memory-repository";
 import { Wallet, WalletId } from "../../../domain/wallet.aggregate";
 import {
   WalletFilter,

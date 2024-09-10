@@ -1,4 +1,4 @@
-import { LoadEntityError } from "@core/shared/domain/validators/validator.error";
+import { LoadEntityError } from "src/core/shared/domain/validators/validator.error";
 import { User, UserId } from "../../../domain/user.aggregate";
 import { UserModel } from "./user.model";
 

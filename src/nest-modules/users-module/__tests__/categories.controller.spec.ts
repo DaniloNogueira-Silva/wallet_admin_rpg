@@ -1,4 +1,4 @@
-import { SortDirection } from '@core/shared/domain/repository/search-params';
+import { SortDirection } from 'src/core/shared/domain/repository/search-params';
 import { UsersController } from '../users.controller';
 import { CreateUserOutput } from '../../../core/user/application/use-cases/create-user/create-user.use-case';
 import { CreateUserDto } from '../dto/create-user.dto';

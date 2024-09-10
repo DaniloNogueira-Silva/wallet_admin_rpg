@@ -7,7 +7,7 @@ import {
   UserSearchParams,
   UserSearchResult,
 } from "../../../../domain/user.repository";
-import { setupSequelize } from "@core/shared/infra/testing/helpers";
+import { setupSequelize } from "src/core/shared/infra/testing/helpers";
 
 describe("UserSequelizeRepository Integration Test", () => {
   let repository: UserSequelizeRepository;

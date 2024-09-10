@@ -1,8 +1,8 @@
 import { UserOutputMapper } from "../../common/user-output";
-import { UserSequelizeRepository } from "@core/user/infra/db/sequelize/user-sequelize-repository";
-import { UserModel } from "@core/user/infra/db/sequelize/user.model";
-import { setupSequelize } from "@core/shared/infra/testing/helpers";
-import { User } from "@core/user/domain/user.aggregate";
+import { UserSequelizeRepository } from "src/core/user/infra/db/sequelize/user-sequelize-repository";
+import { UserModel } from "src/core/user/infra/db/sequelize/user.model";
+import { setupSequelize } from "src/core/shared/infra/testing/helpers";
+import { User } from "src/core/user/domain/user.aggregate";
 import { ListUserUseCase } from "../list-user.use-case";
 
 describe("ListUserUseCase Integration Tests", () => {

@@ -1,4 +1,4 @@
-import { InMemorySearchableRepository } from '@core/shared/infra/db/in-memory/in-memory-repository';
+import { InMemorySearchableRepository } from 'src/core/shared/infra/db/in-memory/in-memory-repository';
 import { SortDirection } from '../../../../shared/domain/repository/search-params';
 
 import { Category, CategoryId } from '../../../domain/category.aggregate';

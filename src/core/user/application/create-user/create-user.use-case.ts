@@ -1,9 +1,9 @@
 import { EntityValidationError } from "../../../shared/domain/validators/validator.error";
 import { IUseCase } from "../../../shared/application/use-case.interface";
 import { UserOutput, UserOutputMapper } from "../common/user-output";
-import { IUserRepository } from "@core/user/domain/user.repository";
+import { IUserRepository } from "src/core/user/domain/user.repository";
 import { CreateUserInput } from "./create-user.input";
-import { User } from "@core/user/domain/user.aggregate";
+import { User } from "src/core/user/domain/user.aggregate";
 
 export class CreateUserUseCase
   implements IUseCase<CreateUserInput, CreateUserOutput>

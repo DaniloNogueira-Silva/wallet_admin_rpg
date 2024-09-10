@@ -1,4 +1,4 @@
-import { User } from "@core/user/domain/user.aggregate";
+import { User } from "src/core/user/domain/user.aggregate";
 import { UserInMemoryRepository } from "../user-in-memory.repository";
 
 describe("UserInMemoryRepository", () => {

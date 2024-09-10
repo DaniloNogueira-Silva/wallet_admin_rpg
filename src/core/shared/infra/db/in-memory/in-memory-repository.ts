@@ -1,16 +1,16 @@
-import { Entity } from "@core/shared/domain/entity";
-import { InvalidArgumentError } from "@core/shared/domain/errors/invalid-argument.error";
-import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
+import { Entity } from "src/core/shared/domain/entity";
+import { InvalidArgumentError } from "src/core/shared/domain/errors/invalid-argument.error";
+import { NotFoundError } from "src/core/shared/domain/errors/not-found.error";
 import {
   IRepository,
   ISearchableRepository,
-} from "@core/shared/domain/repository/repository-interface";
+} from "src/core/shared/domain/repository/repository-interface";
 import {
   SearchParams,
   SortDirection,
-} from "@core/shared/domain/repository/search-params";
-import { SearchResult } from "@core/shared/domain/repository/search-result";
-import { ValueObject } from "@core/shared/domain/value-object";
+} from "src/core/shared/domain/repository/search-params";
+import { SearchResult } from "src/core/shared/domain/repository/search-result";
+import { ValueObject } from "src/core/shared/domain/value-object";
 
 export abstract class InMemoryRepository<
   E extends Entity,

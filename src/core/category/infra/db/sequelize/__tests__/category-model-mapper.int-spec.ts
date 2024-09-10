@@ -1,4 +1,4 @@
-import { LoadEntityError } from "@core/shared/domain/validators/validator.error";
+import { LoadEntityError } from "src/core/shared/domain/validators/validator.error";
 import { setupSequelize } from "../../../../../shared/infra/testing/helpers";
 import { Category, CategoryId } from "../../../../domain/category.aggregate";
 import { CategoryModelMapper } from "../category-model-mapper";

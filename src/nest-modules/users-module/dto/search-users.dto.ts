@@ -1,4 +1,4 @@
-import { ListUserInput } from '@core/user/application/list-user/list-user.use-case';
+import { ListUserInput } from 'src/core/user/application/list-user/list-user.use-case';
 import { SortDirection } from '../../../core/shared/domain/repository/search-params';
 
 export class SearchUsersDto implements ListUserInput {

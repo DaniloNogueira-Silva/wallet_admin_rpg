@@ -1,8 +1,8 @@
-import { UserSequelizeRepository } from "@core/user/infra/db/sequelize/user-sequelize-repository";
+import { UserSequelizeRepository } from "src/core/user/infra/db/sequelize/user-sequelize-repository";
 import { CreateUserUseCase } from "../create-user.use-case";
-import { setupSequelize } from "@core/shared/infra/testing/helpers";
-import { UserModel } from "@core/user/infra/db/sequelize/user.model";
-import { UserId } from "@core/user/domain/user.aggregate";
+import { setupSequelize } from "src/core/shared/infra/testing/helpers";
+import { UserModel } from "src/core/user/infra/db/sequelize/user.model";
+import { UserId } from "src/core/user/domain/user.aggregate";
 import { update } from "lodash";
 
 describe("CreateUserUseCase Integration Tests", () => {
