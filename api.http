@@ -44,7 +44,7 @@ Content-Type: application/json
 GET http://localhost:3000/wallets
 
 ###
-GET http://localhost:3000/wallets/390761fa-0546-4db0-9214-0444d6f31d6e
+GET http://localhost:3000/wallets/07ff7f9c-5eef-45b6-a4bd-ebb45243b3ed
 
 ###
 PATCH  http://localhost:3000/wallets/390761fa-0546-4db0-9214-0444d6f31d6e
@@ -66,4 +66,15 @@ Content-Type: application/json
 
 {
     "name": "Lazer"
+}
+
+### 
+POST http://localhost:3000/goals
+Content-Type: application/json
+
+{
+    "name": "Comprar Carro",
+    "description": "Comprar um carrito até o fim do ano",
+    "balance": 150,
+    "end_date": "2024-12-31"
 }
