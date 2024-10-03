@@ -23,7 +23,7 @@ describe("CategoryModelMapper Integration Tests", () => {
       expect(e).toBeInstanceOf(LoadEntityError);
       expect((e as LoadEntityError).error).toMatchObject([
         {
-          name: ["name must be shorter than or equal to 255 characters"],
+          name: ["name must be shorter than or equal to 255 apps"],
         },
       ]);
     }
