@@ -6,6 +6,7 @@ import { UsersModule } from "./nest-modules/users-module/users.module";
 import { CategoriesModule } from "./nest-modules/categories-module/categories.module";
 import { WalletsModule } from "./nest-modules/wallet-module/wallet.module";
 import { GoalsModule } from "./nest-modules/goals-module/goals.module";
+import { TransactionsModule } from "./nest-modules/transaction-module/transaction.module";
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { GoalsModule } from "./nest-modules/goals-module/goals.module";
     UsersModule,
     WalletsModule,
     CategoriesModule,
-    GoalsModule
+    GoalsModule,
+    TransactionsModule,
   ],
   providers: [],
   controllers: [],

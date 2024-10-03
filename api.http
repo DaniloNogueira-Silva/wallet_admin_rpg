@@ -59,6 +59,8 @@ Content-Type: application/json
 ###
 DELETE  http://localhost:3000/wallets/f47a1c39-c497-4287-9b75-496c6be71f1c
 
+### 
+GET  http://localhost:3000/categories
 
 ### 
 POST http://localhost:3000/categories
@@ -77,4 +79,18 @@ Content-Type: application/json
     "description": "Comprar um carrito até o fim do ano",
     "balance": 150,
     "end_date": "2024-12-31"
+}
+
+###
+POST http://localhost:3000/transactions
+Content-Type: application/json
+
+{
+    "wallet_id": "f4092263-4b3e-4dfd-b1a5-f2c6d9c25f14",
+  "category_id": "87a057fc-abbc-482f-94a6-edadfc8c18a8",
+  "value": 100,
+  "name": "lanche fim de semana",
+  "status": "Pendente",
+  "type": "DESPESA",
+  "effective_date": "2024-02-10"
 }
