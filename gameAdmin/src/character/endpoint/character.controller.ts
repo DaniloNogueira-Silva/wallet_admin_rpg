@@ -1,34 +1,23 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { characterService } from '../useCases/character.useCase';
+import { Controller, Post, Body, Get, Param, Patch } from '@nestjs/common';
 import { CreateCharacterDto } from '../dto/create-character.dto';
-import { UpdateCharacterDto } from '../dto/update-character.dto';
+import { CharacterService } from '../services/character.service';
 
-@Controller('character')
-export class characterController {
-  constructor(private readonly characterService: characterService) {}
+@Controller('characters')
+export class CharacterController {
+  constructor(private readonly characterService: CharacterService) {}
 
   @Post()
-  create(@Body() createcharacterDto: CreateCharacterDto) {
-    return this.characterService.create(createcharacterDto);
-  }
-
-  @Get()
-  findAll() {
-    return this.characterService.findAll();
+  async create(@Body() createCharacterDto: CreateCharacterDto) {
+    return this.characterService.create(createCharacterDto);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.characterService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    return this.characterService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatecharacterDto: UpdateCharacterDto) {
-    return this.characterService.update(+id, updatecharacterDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.characterService.remove(+id);
+  @Patch(':id/levelUp')
+  async levelUp(@Param('id') id: string) {
+    return this.characterService.levelUp(id);
   }
 }

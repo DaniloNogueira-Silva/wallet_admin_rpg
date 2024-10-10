@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { characterService } from './character.useCase';
+import { characterService } from './character.service';
 
 describe('characterService', () => {
   let service: characterService;

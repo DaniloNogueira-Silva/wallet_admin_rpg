@@ -1,0 +1,16 @@
+## valid uuid = 8f4b7b9c-3f7a-4b6c-8b0c-1c9c5b8b9b6a
+
+### 
+POST http://localhost:3000/characters
+Content-Type: application/json
+
+{
+    "name": "Danilo",
+    "genre": "Masculino",
+    "level": "123",
+    "health": 100,
+    "stamina": 100,
+    "user_id": 1234
+}
+
+###
